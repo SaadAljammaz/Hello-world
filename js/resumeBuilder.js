@@ -42,7 +42,12 @@ var bio = {
 				formattedskills = HTMLskills.replace("%data%",bio.skills[i++]);
 			$("#header").append(formattedskills);
 			});
-			}
+		
+			$("#footerContacts").append(formattedmobile);
+			$("#footerContacts").append(formattedemail);
+			$("#footerContacts").append(formattedgithub);
+			$("#footerContacts").append(formattedlocation);
+		}
 	}
 };
 
@@ -200,16 +205,7 @@ $("#mapDiv").append(googleMap);
 
 
 
-var formattedmobile = HTMLmobile.replace("%data%",bio.contacts.mobile);
-var formattedemail = HTMLemail.replace("%data%",bio.contacts.email);
-var formattedgithub = HTMLgithub.replace("%data%",bio.contacts.github);
-var formattedlocation = HTMLlocation.replace("%data%",bio.contacts.location);
 
-
-$("#footerContacts").append(formattedmobile);
-$("#footerContacts").append(formattedemail);
-$("#footerContacts").append(formattedgithub);
-$("#footerContacts").append(formattedlocation);
 
 
 
