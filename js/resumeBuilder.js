@@ -94,17 +94,17 @@ var education = {
 			$(".education-entry:last").append(formattedschoolMajor);
 		}
 		$(".education-entry:last").append(HTMLonlineClasses);
-		for(var e in education.onlineCourses){
-			var formattedonlineTitle = HTMLonlineTitle.replace("%data%",education.onlineCourses[e].title);
+		for(var element in education.onlineCourses){
+			var formattedonlineTitle = HTMLonlineTitle.replace("%data%",education.onlineCourses[element].title);
 			$(".education-entry:last").append(formattedonlineTitle);
 
-			var formattedonlineSchool = HTMLonlineSchool.replace("%data%",education.onlineCourses[e].school);
+			var formattedonlineSchool = HTMLonlineSchool.replace("%data%",education.onlineCourses[element].school);
 			$(".education-entry:last").append(formattedonlineSchool);
 
-			var formattedonlineDates = HTMLonlineDates.replace("%data%",education.onlineCourses[e].dates);
+			var formattedonlineDates = HTMLonlineDates.replace("%data%",education.onlineCourses[element].dates);
 			$(".education-entry:last").append(formattedonlineDates);
 
-			var formattedonlineURL = HTMLonlineURL.replace("%data%",education.onlineCourses[e].url);
+			var formattedonlineURL = HTMLonlineURL.replace("%data%",education.onlineCourses[element].url);
 			$(".education-entry:last").append(formattedonlineURL);
 
 		}
@@ -180,10 +180,16 @@ var projects = {
 
 		var formattedprojectImage;
 		var i = 0;
-		projects.projects[e].images.forEach(function(element){
-			formattedprojectImage = HTMLprojectImage.replace("%data%",projects.projects[e].images[i++]);
+		for(var element in projects.projects[e].images){
+			formattedprojectImage = HTMLprojectImage.replace("%data%",projects.projects[e].images[element]);
 		$(".project-entry:last").append(formattedprojectImage);
-		});
+		}
+
+
+		// projects.projects[e].images.forEach(function(element){
+		// 	formattedprojectImage = HTMLprojectImage.replace("%data%",projects.projects[e].images[i++]);
+		// $(".project-entry:last").append(formattedprojectImage);
+		// });
 		}
 	}
 };
