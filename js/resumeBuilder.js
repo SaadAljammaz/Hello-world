@@ -89,8 +89,8 @@ var education = {
 			$(".education-entry:last").append(formattedschoolMajor);
 		}
 		$(".education-entry:last").append(HTMLonlineClasses);
-		for (var i = 0; i < education.onlineCourses.length; i++) {
-			var onlineCourse = education.onlineCourses[i];
+		for (var j = 0; j < education.onlineCourses.length; j++) {
+			var onlineCourse = education.onlineCourses[j];
 
 			var formattedonlineTitle = HTMLonlineTitle.replace("%data%",onlineCourse.title);
 			$(".education-entry:last").append(formattedonlineTitle);
