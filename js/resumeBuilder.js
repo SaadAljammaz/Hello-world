@@ -198,5 +198,8 @@ bio.display();
 work.display();
 projects.display();
 education.display();
+$('#projects').addClass("orange");
+$('#mapDiv').addClass("orange");
+$('#workExperience').removeClass("gray").addClass("dark-gray");
 
 $("#mapDiv").append(googleMap);
