@@ -1,3 +1,4 @@
+var data = '%data%';
 var bio = {
 	name: "Saad Aljammaz",
     role: "Student",
@@ -11,17 +12,17 @@ var bio = {
     skills: ["Programming","handsome","awesome"],
     biopic: "images/fry.jpg",
     display: function(){
-	    var formattedName = HTMLheaderName.replace("%data%",bio.name);
-	    var formattedRole = HTMLheaderRole.replace("%data%",bio.role);
+	    var formattedName = HTMLheaderName.replace(data,bio.name);
+	    var formattedRole = HTMLheaderRole.replace(data,bio.role);
 
-		var formattedmobile = HTMLmobile.replace("%data%",bio.contacts.mobile);
-		var formattedemail = HTMLemail.replace("%data%",bio.contacts.email);
-		var formattedgithub = HTMLgithub.replace("%data%",bio.contacts.github);
-		var formattedlocation = HTMLlocation.replace("%data%",bio.contacts.location);
+		var formattedmobile = HTMLmobile.replace(data,bio.contacts.mobile);
+		var formattedemail = HTMLemail.replace(data,bio.contacts.email);
+		var formattedgithub = HTMLgithub.replace(data,bio.contacts.github);
+		var formattedlocation = HTMLlocation.replace(data,bio.contacts.location);
 
 
-		var formattedimage = HTMLbioPic.replace("%data%",bio.biopic);
-		var formattedwelcomeMsg = HTMLwelcomeMsg.replace("%data%",bio.welcomeMessage);
+		var formattedimage = HTMLbioPic.replace(data,bio.biopic);
+		var formattedwelcomeMsg = HTMLwelcomeMsg.replace(data,bio.welcomeMessage);
 
 	    $("#header").append(formattedName);
 		$("#header").append(formattedRole);
@@ -33,7 +34,7 @@ var bio = {
 		$("#header").append(HTMLskillsStart);
 		var formattedskills;
 		for (var i = 0; i < bio.skills.length; i++) {
-			formattedskills = HTMLskills.replace("%data%",bio.skills[i]);
+			formattedskills = HTMLskills.replace(data,bio.skills[i]);
 			$("#header").append(formattedskills);
 		}
 		
@@ -72,35 +73,35 @@ var education = {
 		for (var i = 0; i < education.schools.length; i++) {
 			var school = education.schools[i];
 
-			var formattedschoolName = HTMLschoolName.replace("%data%",school.name);
+			var formattedschoolName = HTMLschoolName.replace(data,school.name);
 			$(".education-entry:last").append(formattedschoolName);
 
-			var formattedschoolDegree = HTMLschoolDegree.replace("%data%",school.degree);
+			var formattedschoolDegree = HTMLschoolDegree.replace(data,school.degree);
 			$(".education-entry:last").append(formattedschoolDegree);
 
-			var formattedschoolDates = HTMLschoolDates.replace("%data%",school.dates);
+			var formattedschoolDates = HTMLschoolDates.replace(data,school.dates);
 			$(".education-entry:last").append(formattedschoolDates);
 
-			var formattedschoolLocation = HTMLschoolLocation.replace("%data%",school.location);
+			var formattedschoolLocation = HTMLschoolLocation.replace(data,school.location);
 			$(".education-entry:last").append(formattedschoolLocation);
 
-			var formattedschoolMajor = HTMLschoolMajor.replace("%data%",school.majors);
+			var formattedschoolMajor = HTMLschoolMajor.replace(data,school.majors);
 			$(".education-entry:last").append(formattedschoolMajor);
 		}
 		$(".education-entry:last").append(HTMLonlineClasses);
 		for (var j = 0; j < education.onlineCourses.length; j++) {
 			var onlineCourse = education.onlineCourses[j];
 
-			var formattedonlineTitle = HTMLonlineTitle.replace("%data%",onlineCourse.title);
+			var formattedonlineTitle = HTMLonlineTitle.replace(data,onlineCourse.title);
 			$(".education-entry:last").append(formattedonlineTitle);
 
-			var formattedonlineSchool = HTMLonlineSchool.replace("%data%",onlineCourse.school);
+			var formattedonlineSchool = HTMLonlineSchool.replace(data,onlineCourse.school);
 			$(".education-entry:last").append(formattedonlineSchool);
 
-			var formattedonlineDates = HTMLonlineDates.replace("%data%",onlineCourse.dates);
+			var formattedonlineDates = HTMLonlineDates.replace(data,onlineCourse.dates);
 			$(".education-entry:last").append(formattedonlineDates);
 
-			var formattedonlineURL = HTMLonlineURL.replace("%data%",onlineCourse.url);
+			var formattedonlineURL = HTMLonlineURL.replace(data,onlineCourse.url);
 			$(".education-entry:last").append(formattedonlineURL);
 		}
 	}
@@ -114,14 +115,22 @@ var work = {
 			"title": "Manager",
 			"location": "Riyadh",
 			"dates": "2009-20012",
-			"description": "All the four legs of an elephant are as huge as thick pillars of a huge building. It has two big ears which go on moving to and fro like a big fan. Its eyes are small. It has a short tail but its trunk is long. It is a wonderful thing. It can pick up even a small needle with its help. The elephant has long white tusks. The elephant is perhaps the strongest animal in the world. It is very costly too."
+			"description": "All the four legs of an elephant are as huge as thick pillars of a "+
+			"huge building. It has two big ears which go on moving to and fro like a big fan. "+
+			"Its eyes are small. It has a short tail but its trunk is long. It is a wonderful thing. "+
+			"It can pick up even a small needle with its help. The elephant has long white tusks."+
+			" The elephant is perhaps the strongest animal in the world. It is very costly too."
 		},
 		{
 			"employer": "Ahmed aljammaz",
 			"title": "Student",
 			"location": "King Saud University",
 			"dates": "20012",
-			"description": "Elephants live in herds. They eat small twigs, straw and wild fruits. A pet elephant also eats bananas, bread and sugarcane’s. Elephants are pure vegetarians. They are very useful for all. They are used in falling trees, lifting logs, pushing them into rivers. In olden time kings and dukes used to keep elephants for wars and battles. In circus also elephants play very important roles."
+			"description": "Elephants live in herds. They eat small twigs, straw and wild fruits."+
+			" A pet elephant also eats bananas, bread and sugarcane’s. Elephants are pure vegetarians."+
+			" They are very useful for all. They are used in falling trees,"+
+			" lifting logs, pushing them into rivers. In olden time kings and dukes used to"+
+			" keep elephants for wars and battles. In circus also elephants play very important roles."
 		}
 	],
 	display: function(){
@@ -129,18 +138,18 @@ var work = {
 		for (var i = 0; i < work.jobs.length; i++) {
 			var job = work.jobs[i];
 
-			var formattedEmployer = HTMLworkEmployer.replace("%data%",job.employer);
-			var formattedTitle = HTMLworkTitle.replace("%data%",job.title);
+			var formattedEmployer = HTMLworkEmployer.replace(data,job.employer);
+			var formattedTitle = HTMLworkTitle.replace(data,job.title);
 			var formattedEmployerTitle = formattedEmployer + formattedTitle;
 			$(".work-entry:last").append(formattedEmployerTitle);
 
-			var formattedDates = HTMLworkDates.replace("%data%",job.dates);
+			var formattedDates = HTMLworkDates.replace(data,job.dates);
 			$(".work-entry:last").append(formattedDates);
 
-			var formattedLocation = HTMLworkLocation.replace("%data%",job.location);
+			var formattedLocation = HTMLworkLocation.replace(data,job.location);
 			$(".work-entry:last").append(formattedLocation);
 
-			var formattedDescription = HTMLworkDescription.replace("%data%",job.description);
+			var formattedDescription = HTMLworkDescription.replace(data,job.description);
 			$(".work-entry:last").append(formattedDescription);
 		}
 	}
@@ -166,19 +175,19 @@ var projects = {
 		for (var i = 0; i < projects.projects.length; i++) {
 			var project = projects.projects[i];
 
-			var formattedprojectTitle = HTMLprojectTitle.replace("%data%",project.title);
+			var formattedprojectTitle = HTMLprojectTitle.replace(data,project.title);
 			$(".project-entry:last").append(formattedprojectTitle);
 
-			var formattedprojectDates = HTMLprojectDates.replace("%data%",project.dates);
+			var formattedprojectDates = HTMLprojectDates.replace(data,project.dates);
 			$(".project-entry:last").append(formattedprojectDates); 
 
-			var formattedprojectDescription = HTMLprojectDescription.replace("%data%",project.description);
+			var formattedprojectDescription = HTMLprojectDescription.replace(data,project.description);
 			$(".project-entry:last").append(formattedprojectDescription); 
 
 			var formattedprojectImage;
 			for (var j = 0; j < project.images.length; j++) {
 				var image = project.images[j];
-				formattedprojectImage = HTMLprojectImage.replace("%data%",image);
+				formattedprojectImage = HTMLprojectImage.replace(data,image);
 				$(".project-entry:last").append(formattedprojectImage);
 			}
 		}
